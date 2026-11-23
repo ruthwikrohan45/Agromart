@@ -66,21 +66,3 @@ create table DeliveryRoute (
     foreign key (BuyerID) references Buyer(BuyerID)
 );
 
-use AgroMarketDB;
-
-describe Farm;
-describe Buyer;
-describe Produce;
-describe `Order`;
-describe OrderItem;
-describe DeliveryRoute;
-
-select
-    table_name,
-    column_name,
-    constraint_name,
-    referenced_table_name,
-    referenced_column_name
-from information_schema.key_column_usage
-where table_schema = 'AgroMarketDB'
-and referenced_table_name is not null;
